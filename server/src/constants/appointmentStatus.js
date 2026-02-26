@@ -1,0 +1,5 @@
+export const APPOINTMENT_STATUS = Object.freeze({
+  BOOKED: "BOOKED",
+  CANCELLED: "CANCELLED",
+  COMPLETED: "COMPLETED",
+});
