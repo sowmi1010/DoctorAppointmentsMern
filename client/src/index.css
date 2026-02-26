@@ -1,3 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --admin-ink: #0f172a;
+  --admin-card: rgba(255, 255, 255, 0.72);
+  --admin-border: rgba(255, 255, 255, 0.7);
+}
+
+body {
+  color: var(--admin-ink);
+  background-color: #f8fafc;
+}
+
+.admin-dashboard-root {
+  font-family: "Manrope", "Segoe UI", Tahoma, sans-serif;
+  background:
+    radial-gradient(circle at 8% 86%, rgba(56, 189, 248, 0.22) 0%, transparent 35%),
+    radial-gradient(circle at 92% 90%, rgba(251, 146, 60, 0.2) 0%, transparent 34%),
+    linear-gradient(160deg, #f8fafc 0%, #f6f9ff 45%, #fef7ed 100%);
+}
+
+.admin-title-font {
+  font-family: "Sora", "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+.admin-kicker {
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  background: rgba(236, 254, 255, 0.82);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #0f766e;
+}
+
+.admin-glass-card {
+  border: 1px solid var(--admin-border);
+  background: var(--admin-card);
+  box-shadow: 0 32px 50px -44px rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+.admin-animate-rise {
+  animation: adminRise 520ms ease-out both;
+}
+
+.admin-stat-card {
+  animation: adminRise 520ms ease-out both;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.admin-stat-card:hover {
+  transform: translateY(-4px);
+}
+
+@keyframes adminRise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-animate-rise,
+  .admin-stat-card {
+    animation: none !important;
+    transition: none !important;
+  }
+}
